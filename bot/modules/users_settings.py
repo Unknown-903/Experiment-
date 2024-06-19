@@ -168,8 +168,8 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton(f"{'✅️' if lsuffix != 'Not Exists' else ''} Leech Suffix", f"userset {user_id} lsuffix")
 
         metadata = 'Not Exists' if (val:=user_dict.get('metadata', config_dict.get('LEECH_FILENAME_METADATA', ''))) == '' else val
-        buttons.ibutton(f"{'✅️' if lsuffix != 'Not Exists' else ''} Leech Metadata", f"userset {user_id} lsuffix")
-                
+        buttons.ibutton(f"{'✅️' if lmetadata != 'Not Exists' else ''} Metadata", f"userset {user_id} metadata")
+      
         lremname = 'Not Exists' if (val:=user_dict.get('lremname', config_dict.get('LEECH_FILENAME_REMNAME', ''))) == '' else val
         buttons.ibutton(f"{'✅️' if lremname != 'Not Exists' else ''} Leech Remname", f"userset {user_id} lremname")
 
@@ -613,7 +613,7 @@ async def edit_user_settings(client, query):
         pfunc = partial(set_custom, pre_event=query, key=data[2])
         rfunc = partial(update_user_settings, query, data[2], 'mirror' if data[2] in ['ddl_servers', 'user_tds'] else "ddl_servers")
         await event_handler(client, query, pfunc, rfunc)
-    elif data[2] in ['lprefix', 'lsuffix', 'lremname', 'lcaption', 'ldump', 'mprefix', 'msuffix', 'mremname']:
+    elif data[2] in ['lprefix', 'lsuffix', 'lremname', 'lcaption', 'ldump', 'mprefix', 'msuffix', 'mremname', 'metadata']:
         handler_dict[user_id] = False
         await query.answer()
         edit_mode = len(data) == 4
@@ -630,7 +630,7 @@ async def edit_user_settings(client, query):
         await update_user_settings(query, data[2][1:], 'leech')
         if DATABASE_URL:
             await DbManger().update_user_data(user_id)
-    elif data[2] in ['dmprefix', 'dmsuffix', 'dmremname', 'duser_tds']:
+    elif data[2] in ['dmprefix', 'dmsuffix', 'dmremname', 'duser_tds', 'dmetadata']:
         handler_dict[user_id] = False
         await query.answer()
         update_user_ldata(user_id, data[2][1:], {} if data[2] == 'duser_tds' else '')
