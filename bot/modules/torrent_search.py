@@ -14,7 +14,23 @@ from bot.helper.ext_utils.bot_utils import get_readable_file_size, sync_to_async
 from bot.helper.telegram_helper.button_build import ButtonMaker
 
 PLUGINS = ['piratebay', 'limetorrents', 'torrentscsv', 'torlock', 'eztv', 'solidtorrents', 'yts_am', 'nyaasi', 'ettv', 'thepiratebay', 'magnetdl', 'uniondht', 'yts', 'Glotorrents', 'Torrentproject', 'Linuxtracker', 'Thepiratebay', 'Ett', 'Leetx']
-SITES = None
+SITES = ["https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/piratebay.py",
+                   "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/limetorrents.py",
+                   "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/torrentscsv.py",
+                   "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/torlock.py",
+                   "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/eztv.py",
+                   "https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/engines/torrentproject.py",
+                   "https://raw.githubusercontent.com/v1k45/1337x-qBittorrent-search-plugin/master/leetx.py",
+                   "https://raw.githubusercontent.com/MaurizioRicci/qBittorrent_search_engines/master/kickass_torrent.py",
+                   "https://raw.githubusercontent.com/MaurizioRicci/qBittorrent_search_engines/master/yts_am.py",
+                   "https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/linuxtracker.py",
+                   "https://raw.githubusercontent.com/MadeOfMagicAndWires/qBit-plugins/master/engines/nyaasi.py",
+                   "https://raw.githubusercontent.com/LightDestory/qBittorrent-Search-Plugins/master/src/engines/ettv.py",
+                   "https://raw.githubusercontent.com/LightDestory/qBittorrent-Search-Plugins/master/src/engines/glotorrents.py",
+                   "https://raw.githubusercontent.com/LightDestory/qBittorrent-Search-Plugins/master/src/engines/thepiratebay.py",
+                   "https://raw.githubusercontent.com/nindogo/qbtSearchScripts/master/magnetdl.py",
+                   "https://raw.githubusercontent.com/msagca/qbittorrent_plugins/main/uniondht.py",
+                   "https://raw.githubusercontent.com/khensolomon/leyts/master/yts.py"]
 TELEGRAPH_LIMIT = 300
 
 
